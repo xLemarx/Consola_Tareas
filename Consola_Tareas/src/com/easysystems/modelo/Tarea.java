@@ -9,6 +9,15 @@ public class Tarea {
 	public Tarea(String titulo, String descripcion) {
 		this.titulo = titulo;
 		this.descripcion = descripcion;
+		this.categoria = "";
+		this.completada = false;
+	}
+	
+	public Tarea(String titulo, String descripcion, String categoria) {
+		this.titulo = titulo;
+		this.descripcion = descripcion;
+		this.categoria = categoria;
+		this.completada = false;
 	}
 	
 	public String getTitulo() {
@@ -31,8 +40,8 @@ public class Tarea {
 		return completada;
 	}
 
-	public void setCompletada(Boolean completada) {
-		this.completada = completada;
+	public void completar() {
+		this.completada = true;
 	}
 
 	public String getCategoria() {
@@ -45,7 +54,7 @@ public class Tarea {
 
 	@Override
 	public String toString() {
-		return (completada ? "[X]" : "[ ]") + " " + this.titulo + " -> " + this.descripcion + " " + this.categoria ;
+		return (completada ? "[X]" : "[ ]") + " " + this.titulo + " " + this.descripcion + " " + this.categoria ;
 	}
 	
 }
